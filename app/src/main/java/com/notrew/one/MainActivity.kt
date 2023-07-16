@@ -39,10 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         if (emailValue.isNotBlank()) {
             saveLocally(emailValue, passwordValue)
-           
+
             makeText(
                 this,
-                "Login sucesss \uD83D\uDE80.",
+                "Login success \uD83D\uDE80.",
                 Toast.LENGTH_SHORT
             ).show()
         } else {

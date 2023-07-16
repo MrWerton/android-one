@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">One</string>
+    <string name="hint_password">Enter your name</string>
+    <string name="hint_email">Enter your name</string>
+    <string name="login_title">Welcome to MyApp!</string>
+    <string name="login_description">Please enter your credentials below to log in!</string>
+    <string name="login_button_title">Login</string>
+</resources>

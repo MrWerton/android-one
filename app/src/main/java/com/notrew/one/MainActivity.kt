@@ -38,9 +38,8 @@ class MainActivity : AppCompatActivity() {
         val passwordValue = passwordInput.text.toString().trim()
 
         if (emailValue.isNotBlank()) {
-            preferences.edit().putString("email", emailValue).putString("password", passwordValue).apply()
-            println(emailValue)
-            println(passwordValue)
+            saveLocally(emailValue, passwordValue)
+           
             makeText(
                 this,
                 "Login sucesss \uD83D\uDE80.",
@@ -52,6 +51,14 @@ class MainActivity : AppCompatActivity() {
                 "Please the credentials should be informed.",
                 Snackbar.LENGTH_SHORT
             ).show()
+        }
+    }
+
+    private fun saveLocally(emailValue: String, passwordValue: String) {
+        preferences.edit().apply {
+            putString("email", emailValue)
+            putString("password", passwordValue)
+            apply()
         }
     }
 

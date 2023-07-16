@@ -5,4 +5,5 @@
     <string name="login_title">Welcome to One!</string>
     <string name="login_description">Please enter your credentials below to log in!</string>
     <string name="login_button_title">Login</string>
+    <string name="greeting">Hello, %1$s!</string>
 </resources>

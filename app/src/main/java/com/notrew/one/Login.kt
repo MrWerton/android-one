@@ -1,6 +1,7 @@
 package com.notrew.one
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
@@ -10,7 +11,7 @@ import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class Login : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var emailInput: TextView
     private lateinit var passwordInput: TextView
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         preferences = getSharedPreferences("db_local", Context.MODE_PRIVATE)
 
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 "Login success \uD83D\uDE80.",
                 Toast.LENGTH_SHORT
             ).show()
+            navigateToHome()
         } else {
             Snackbar.make(
                 findViewById(android.R.id.content),
@@ -53,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
     }
+
 
     private fun saveLocally(emailValue: String, passwordValue: String) {
         preferences.edit().apply {
@@ -69,5 +72,10 @@ class MainActivity : AppCompatActivity() {
             emailInput.text = email
             passwordInput.text = password
         }
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, Home::class.java)
+        startActivity(intent)
     }
 }
